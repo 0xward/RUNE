@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html { background: #0A0A0A; }
+
+body {
+  margin: 0;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  font-family: "Geist", "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+::selection { background: #FFFFFF; color: #000000; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #1F1F1F; border-radius: 0; }
+
+/* ReactFlow overrides */
+.react-flow__node {
+  background: #111111 !important;
+  border: 1px solid #1F1F1F !important;
+  color: #FFFFFF !important;
+  font-family: "Geist", sans-serif !important;
+  font-size: 11px !important;
+}
+.react-flow__edge-path { stroke: #333333 !important; }
+.react-flow__controls {
+  background: #111111 !important;
+  border: 1px solid #1F1F1F !important;
+  box-shadow: none !important;
+}
+.react-flow__controls-button {
+  background: #111111 !important;
+  border-bottom: 1px solid #1F1F1F !important;
+  color: #A1A1AA !important;
+}
+.react-flow__controls-button:hover { background: #1F1F1F !important; }
+.react-flow__background { background: #0A0A0A !important; }
+.react-flow__minimap { display: none !important; }
+
+/* Wing clip for hero agent */
+.clip-wing { clip-path: polygon(0 50%, 100% 0, 76% 50%, 100% 100%); }
+
+@keyframes agentFloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+@keyframes agentBlink {
+  0%, 92%, 100% { transform: scaleY(1); opacity: 1; }
+  95% { transform: scaleY(0.08); opacity: 0.75; }
+}
+@keyframes agentBars {
+  0%, 100% { transform: scaleY(0.55); transform-origin: bottom; opacity: 0.35; }
+  50% { transform: scaleY(1); transform-origin: bottom; opacity: 0.9; }
+}
